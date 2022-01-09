@@ -1,7 +1,6 @@
 #ifndef HANDLERTYPE_HPP
 #define HANDLERTYPE_HPP
 
-#include <string>
 #include <fstream>
 #include "SpecType.hpp"
 
@@ -10,13 +9,18 @@ class HandlerType {
         std::string chem;
         std::string spec;
     public:
-        HandlerType(std::string chemName, SpecType type);
+        HandlerType(std::string &chemName, SpecType type);
         std::ifstream getFileObj();
 };
 
-HandlerType::HandlerType(std::string chemName, SpecType type) {
+HandlerType::HandlerType(std::string &chemName, SpecType type) {
+    chemName[0] = toupper(chemName[0]);
+    if (chemName.length() > 1) {
+        for (int i = 1; i < chemName.length(); i++)
+            chemName[i] = tolower(chemName[i]);
+    }
     chem = chemName;
-    spec = specType;
+    spec = type.getType();
 }
 
 std::ifstream HandlerType::getFileObj() {

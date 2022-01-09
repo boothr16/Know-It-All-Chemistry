@@ -21,7 +21,9 @@ int main(int argc, char *argv[])
     if (!inFile) {
         std::cout << "Requested information not available.\n";
     }
+    /*
     else
         FileParser(inFile, typeIn);
+    */
     return 0;
 }
