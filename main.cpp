@@ -1,6 +1,6 @@
 #include <iostream>
-#include <fstream>
 #include "SpecType.hpp"
+#include "HandlerType.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -14,4 +14,7 @@ int main(int argc, char *argv[])
         std::cout << "Invalid spectrum type. Valid spectrum types: \n";
         return 1;
     }
+
+    std::string chemIn = argv[1];
+    HandlerType sampleInfo(chemIn, spec);
 }
