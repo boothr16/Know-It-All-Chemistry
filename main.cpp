@@ -1,6 +1,7 @@
 #include <iostream>
 #include "SpecType.hpp"
 #include "HandlerType.hpp"
+#include "FileParser.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -21,9 +22,7 @@ int main(int argc, char *argv[])
     if (!inFile) {
         std::cout << "Requested information not available.\n";
     }
-    /*
     else
         FileParser(inFile, typeIn);
-    */
     return 0;
 }
