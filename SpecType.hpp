@@ -7,6 +7,7 @@
 class SpecType {
     private:
         std::string type;
+        const std::set<std::string> SPEC_TYPES = {"UV", "MS"};
     public:
         SpecType(std::string &spec);
         bool isValid();
@@ -23,7 +24,6 @@ SpecType::SpecType(std::string &spec) {
 bool SpecType::isValid() {
     if (type.length() < 2)
         return false;
-    const std::set<std::string> SPEC_TYPES = {"UV", "MS"};
     if (SPEC_TYPES.find(type) == SPEC_TYPES.end())
         return false;
     return true;
