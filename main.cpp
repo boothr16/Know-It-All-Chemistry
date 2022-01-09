@@ -16,5 +16,12 @@ int main(int argc, char *argv[])
     }
 
     std::string chemIn = argv[1];
-    HandlerType sampleInfo(chemIn, spec);
+    HandlerType sampleInfo(chemIn, typeIn);
+    std::ifstream inFile = sampleInfo.getFileObj();
+    if (!inFile) {
+        std::cout << "Requested information not available.\n";
+    }
+    else
+        FileParser(inFile, typeIn);
+    return 0;
 }

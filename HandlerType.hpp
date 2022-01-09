@@ -3,17 +3,18 @@
 
 #include <string>
 #include <fstream>
+#include "SpecType.hpp"
 
 class HandlerType {
     private:
         std::string chem;
         std::string spec;
     public:
-        HandlerType(std::string chemName, std::string specType);
+        HandlerType(std::string chemName, SpecType type);
         std::ifstream getFileObj();
 };
 
-HandlerType::HandlerType(std::string chemName, std::string specType) {
+HandlerType::HandlerType(std::string chemName, SpecType type) {
     chem = chemName;
     spec = specType;
 }
