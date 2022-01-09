@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     SpecType typeIn(spec);
     if (!typeIn.isValid()) {
         std::cout << "Invalid spectrum type. Valid spectrum types: \n";
-        return 1;
+        return 2;
     }
 
     std::string chemIn = argv[1];
@@ -21,8 +21,8 @@ int main(int argc, char *argv[])
     std::ifstream inFile = sampleInfo.getFileObj();
     if (!inFile) {
         std::cout << "Requested information not available.\n";
+        return 3;
     }
-    else
-        FileParser(inFile, typeIn);
+    FileParser(inFile, typeIn);
     return 0;
 }
