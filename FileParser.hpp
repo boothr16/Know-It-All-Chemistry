@@ -49,7 +49,7 @@ void FileParser::parseMS(std::ifstream &inFile) {
         }
     }
     inFile.close();
-    double percentAbun = (1 / (1 + totalIntensity)) * 100;
+    double percentAbun = (1 / totalIntensity) * 100;
     std::cout << "The most common fragment ion formed has a mass/charge";
     std::cout << " ratio of " << mzRatio << " and a relative abundance";
     std::cout << " of " << percentAbun << "%\n";
