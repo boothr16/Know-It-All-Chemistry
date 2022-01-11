@@ -21,7 +21,7 @@ FileParser::FileParser(std::ifstream &inFile, SpecType spec) {
         parseMS(inFile);
 }
 
-// TODO: IMPLEMENT LOGIC FOR SNR CALCULATION
+// TODO: IMPLEMENT LOGIC FOR SNR CALCULATION USING PRIORITY QUEUE
 void FileParser::parseUV(std::ifstream &inFile) {
     double maxWav = -1, maxAbs = -1;
     double noiseSignature = 0;
