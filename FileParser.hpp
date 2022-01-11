@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <queue>
 #include "SpecType.hpp"
 
 class FileParser {
@@ -20,8 +21,22 @@ FileParser::FileParser(std::ifstream &inFile, SpecType spec) {
         parseMS(inFile);
 }
 
+// TODO: IMPLEMENT LOGIC FOR SNR CALCULATION
 void FileParser::parseUV(std::ifstream &inFile) {
-
+    double maxWav = -1, maxAbs = -1;
+    double noiseSignature = 0;
+    std::string line;
+    while (getline(inFile, line)) {
+        if (line.length() < 2)
+            break;
+        int spacePos = line.find(' ');
+        double wav = stod(line.substr(0, spacePos));
+        double abs = stod(line.substr(spacePos+1));
+        if (abs > maxAbs) {
+            maxWav = wav;
+            maxAbs = abs;
+        }
+    }
 }
 
 void FileParser::parseMS(std::ifstream &inFile) {
