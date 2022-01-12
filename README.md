@@ -6,6 +6,7 @@ The Know-It-All-Chemistry repository featured here is a minimum-working example 
 ## Dependencies
 * C++ compiler (GCC, clang, etc.)
 * In the spirit of portraying the application as part of a software bundle, sample/output files must be placed in relative path `./Samples/X/`, where X is the corresponding measurement (UV, MS, etc.), as shown below.
+* 
 ![filepath](https://user-images.githubusercontent.com/49886228/149148102-e24e80cc-f2e6-4383-bfe6-f96dd6cce4eb.png)
 
 
