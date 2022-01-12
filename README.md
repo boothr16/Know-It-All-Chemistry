@@ -6,16 +6,17 @@ The Know-It-All-Chemistry repository featured here is a minimum-working example 
 ## Dependencies
 * C++ compiler (GCC, clang, etc.)
 * Sample spectra should be placed in `./Samples/X/` where X is the measurement type (UV, MS, etc.). Cloning the examples from this repository ensures the correct file path.
-* 
-![filepath](https://user-images.githubusercontent.com/49886228/149148102-e24e80cc-f2e6-4383-bfe6-f96dd6cce4eb.png)
+- ![filepath](https://user-images.githubusercontent.com/49886228/149148102-e24e80cc-f2e6-4383-bfe6-f96dd6cce4eb.png)
 
 ## How to compile and run application
 1. `git clone` this repository.
 2. `cd` into the created Know-It-All-Chemistry directory.
-3. Compile project using `g++ main.cpp -o kia' from the command line.
+3. Compile project using `g++ main.cpp -o kia` from the command line.
 4. Run examples using `./kia <chemical name> <measurement type>` from the command line (drop the angled brackets).
 
-## Using the examples provided in this repository
+## Example input and output using the files included in this repository
+1. Mass Spectrum interpretation:
+-
 
 
 
