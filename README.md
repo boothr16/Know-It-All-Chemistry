@@ -16,7 +16,7 @@ The Know-It-All-Chemistry repository featured here is a minimum-working example 
 
 ## Example input and output using the files included in this repository
 1. Mass Spectrum interpretation:
--
+-![mstrial](https://user-images.githubusercontent.com/49886228/149187100-f2ce5707-6a5b-4138-80bd-2cf2629e9539.png)
 
 
 
