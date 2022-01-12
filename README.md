@@ -16,10 +16,13 @@ The Know-It-All-Chemistry repository featured here is a minimum-working example 
 
 ## Example input and output using the files included in this repository
 1. Mass Spectrum interpretation:
+
 -![mstrial](https://user-images.githubusercontent.com/49886228/149187100-f2ce5707-6a5b-4138-80bd-2cf2629e9539.png)
 
 2. UV-Vis Spectrum interpretation:
+
 -![uvtrial1](https://user-images.githubusercontent.com/49886228/149187320-a3b2889c-59b5-4d12-ac99-5a2fa2fb17c2.png)
+
 -![uvtrial2](https://user-images.githubusercontent.com/49886228/149187332-a3745a72-5ce8-4f39-9a1b-080d909ba5b5.png)
 
 
