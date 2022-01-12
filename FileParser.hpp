@@ -31,7 +31,7 @@ void FileParser::parseUV(std::ifstream &inFile) {
     while (getline(inFile, line)) {
         if (line.length() < 2)
             break;
-        int spacePos = line.find(' ');
+        int spacePos = line.find('\t');
         double wav = stod(line.substr(0, spacePos));
         double abs = stod(line.substr(spacePos+1));
         if (abs > maxAbs) {
@@ -58,7 +58,7 @@ void FileParser::parseUV(std::ifstream &inFile) {
     stdDev = std::sqrt(stdDev);
     double SNR = maxAbs / stdDev;
     std::cout << "Substance absorbs most strongly at a wavelength of " << maxWav << " nm.";
-    std::cout << "ABS_MAX = " << maxAbs << ", SNR = " << SNR << std::endl;
+    std::cout << "\nABS_MAX = " << maxAbs << ", SNR = " << SNR << std::endl;
 }
 
 void FileParser::parseMS(std::ifstream &inFile) {
