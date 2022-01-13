@@ -23,10 +23,9 @@ FileParser::FileParser(std::ifstream &inFile, SpecType spec) {
         parseMS(inFile);
 }
 
-// TODO: IMPLEMENT LOGIC FOR SNR CALCULATION USING PRIORITY QUEUE
 void FileParser::parseUV(std::ifstream &inFile) {
-    double maxWav = -1, maxAbs = -1;
-    std::priority_queue<double, std::vector<double>, std::greater<double>> pq; // for estimating noise
+    double maxWav = -1, maxAbs = -1, sum = 0;
+    std::vector<double> heights;
     std::string line;
     while (getline(inFile, line)) {
         if (line.length() < 2)
@@ -38,25 +37,16 @@ void FileParser::parseUV(std::ifstream &inFile) {
             maxWav = wav;
             maxAbs = abs;
         }
-        pq.push(abs);
+        heights.push_back(abs);
+        sum += abs;
     }
     inFile.close();
-    // Use smallest 10 Abs values to estimate noise
-    const int NOISE_SAMPLE = 10;
-    double mean = 0;
-    std::vector<double> noiseVec;
-    for (int i = 0; i < NOISE_SAMPLE; i++) {
-        noiseVec.push_back(pq.top());
-        mean += pq.top();
-        pq.pop();
-    }
-    mean /= NOISE_SAMPLE;
+    double mean = sum / heights.size();
     double stdDev = 0;
-    for (int i = 0; i < NOISE_SAMPLE; i++) {
-        stdDev += std::pow((noiseVec[i] - mean), 2);
-    }
+    for (double i : heights)
+        stdDev += std::pow((i - mean), 2);
     stdDev = std::sqrt(stdDev);
-    double SNR = maxAbs / stdDev;
+    double SNR = mean / stdDev;
     std::cout << "Substance absorbs most strongly at a wavelength of " << maxWav << " nm.";
     std::cout << "\nABS_MAX = " << maxAbs << ", SNR = " << SNR << std::endl;
 }
