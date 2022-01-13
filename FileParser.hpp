@@ -45,7 +45,7 @@ void FileParser::parseUV(std::ifstream &inFile) {
     double stdDev = 0;
     for (double i : heights)
         stdDev += std::pow((i - mean), 2);
-    stdDev = std::sqrt(stdDev);
+    stdDev = std::sqrt(stdDev / heights.size());
     double SNR = mean / stdDev;
     std::cout << "Substance absorbs most strongly at a wavelength of " << maxWav << " nm.";
     std::cout << "\nABS_MAX = " << maxAbs << ", SNR = " << SNR << std::endl;
