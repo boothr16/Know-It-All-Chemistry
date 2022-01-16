@@ -52,7 +52,8 @@ void FileParser::parseUV(std::ifstream &inFile) {
 }
 
 void FileParser::parseMS(std::ifstream &inFile) {
-    int mzRatio = -1;
+    // For identifying most abundant fragment ion and its percent abundance
+    int maxMzRatio = -1;
     double totalIntensity = 0;
     int IN_DATA = 0;
     std::string line;
@@ -70,7 +71,7 @@ void FileParser::parseMS(std::ifstream &inFile) {
             double peakIntensity = stod(line.substr(spacePos+1));
             if (peakIntensity == 1) {
                 int comPos = line.find(',');
-                mzRatio = stoi(line.substr(0,comPos));
+                maxMzRatio = stoi(line.substr(0,comPos));
             }
             totalIntensity += peakIntensity;
         }
@@ -78,7 +79,7 @@ void FileParser::parseMS(std::ifstream &inFile) {
     inFile.close();
     double percentAbun = (1 / totalIntensity) * 100;
     std::cout << "The most abundant fragment ion recorded has a mass/charge";
-    std::cout << " ratio of " << mzRatio << " and a percent abundance";
+    std::cout << " ratio of " << maxMzRatio << " and a percent abundance";
     std::cout << " of " << percentAbun << "%\n";
 }
 
