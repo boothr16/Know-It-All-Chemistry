@@ -1,4 +1,3 @@
-#include <iostream>
 #include "SpecType.hpp"
 #include "HandlerType.hpp"
 #include "FileParser.hpp"
