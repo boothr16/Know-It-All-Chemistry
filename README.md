@@ -31,4 +31,4 @@ The Know-It-All-Chemistry repository featured here is a minimum-working example 
 * Unit testing
 * * Throw errors for measurement type mismatch.
 * * Throw errors for unexpected delimiters.
-* Streamline compilation using a Makefile.
+* ~~Streamline compilation using a Makefile.~~
