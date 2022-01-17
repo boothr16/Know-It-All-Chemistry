@@ -11,8 +11,9 @@ The Know-It-All-Chemistry repository featured here is a minimum-working example 
 ## How to compile and run application
 1. `git clone` this repository.
 2. `cd` into the created Know-It-All-Chemistry directory.
-3. Compile project using `g++ main.cpp -o kia` from the command line.
+3. Compile project using `make` from the command line.
 4. Run examples using `./kia <chemical name> <measurement type>` from the command line (drop the angled brackets).
+  * `make clean` can be used to clean up directory.
 
 ## Example input and output using the files included in this repository
 1. Mass Spectrum interpretation:
